@@ -1,13 +1,13 @@
 import logging
 
 from flask_restplus import Api
-from flaskWebApp import settings
 
+from flaskWebApp import settings
 
 log = logging.getLogger(__name__)
 
-api = Api(version='1.0', title='My Blog API',
-          description='A simple demonstration of a Flask RestPlus powered API')
+api = Api(version='1.0', title='data generation service',
+          description='REST endpoints to generate user data')
 
 
 @api.errorhandler
