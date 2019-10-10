@@ -1,7 +1,7 @@
 from flask_restplus import fields
 from flask_restplus import reqparse
 
-from flaskWebApp.controller.restplus import api
+from dataGenerationService.controller.restplus import api
 
 user = api.model('Users', {
     'id': fields.String(readOnly=True, description='user id'),

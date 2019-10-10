@@ -2,7 +2,7 @@ import random
 
 from faker import Faker
 
-from flaskWebApp.users.user import User
+from dataGenerationService.users.user import User
 
 
 def generate_user(nums):

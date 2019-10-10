@@ -3,9 +3,9 @@ import logging
 from flask import request
 from flask_restplus import Resource
 
-from flaskWebApp.controller.restplus import api
-from flaskWebApp.controller.serilizers import user, user_quantity_args
-from flaskWebApp.users.user_generator import generate_user, create_user
+from dataGenerationService.controller.restplus import api
+from dataGenerationService.controller.serilizers import user, user_quantity_args
+from dataGenerationService.users.user_generator import generate_user, create_user
 
 log = logging.getLogger(__name__)
 

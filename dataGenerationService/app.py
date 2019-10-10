@@ -1,11 +1,11 @@
 import logging.config
-
 import os
-from flask import Flask, Blueprint
-from flaskWebApp.controller.users.userAPI import namespace as user_namespace
-from flaskWebApp import settings
-from flaskWebApp.controller.restplus import api
 
+from flask import Flask, Blueprint
+
+from dataGenerationService import settings
+from dataGenerationService.controller.restplus import api
+from dataGenerationService.controller.users.userAPI import namespace as user_namespace
 
 app = Flask(__name__)
 logging_conf_path = os.path.normpath(os.path.join(os.path.dirname(__file__), '../logging.conf'))
