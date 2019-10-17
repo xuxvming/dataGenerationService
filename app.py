@@ -3,12 +3,12 @@ import os
 
 from flask import Flask, Blueprint
 
-from dataGenerationService import settings
-from dataGenerationService.controller.restplus import api
-from dataGenerationService.controller.users.userAPI import namespace as user_namespace
+import settings
+from controller.restplus import api
+from controller.users.userAPI import namespace as user_namespace
 
 app = Flask(__name__)
-logging_conf_path = os.path.normpath(os.path.join(os.path.dirname(__file__), '../logging.conf'))
+logging_conf_path = os.path.normpath(os.path.join(os.path.dirname(__file__), './logging.conf'))
 logging.config.fileConfig(logging_conf_path)
 log = logging.getLogger(__name__)
 
@@ -31,8 +31,8 @@ def initialize_app(flask_app):
 
 def main():
     initialize_app(app)
-    log.info('>>>>> Starting development server at http://{}/controller/ <<<<<'.format(app.config['SERVER_NAME']))
-    app.run(debug=settings.FLASK_DEBUG)
+    log.info('>>>>> Starting development server at http://{}/controller <<<<<'.format(app.config['SERVER_NAME']))
+    app.run(debug=settings.FLASK_DEBUG,host='0.0.0.0')
 
 
 if __name__ == "__main__":

@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+  datagenerationservice:
+    image: datagenerationservice
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/datagenerationservice
+    ports:
+      - 8080:8080
+    expose:
+      - "8080"

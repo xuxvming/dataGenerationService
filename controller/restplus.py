@@ -2,7 +2,7 @@ import logging
 
 from flask_restplus import Api
 
-from dataGenerationService import settings
+import settings
 
 log = logging.getLogger(__name__)
 

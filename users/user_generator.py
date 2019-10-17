@@ -2,13 +2,13 @@ import random
 
 from faker import Faker
 
-from dataGenerationService.users.user import User
+from users.user import User
 
 
 def generate_user(nums):
     user_list = []
     fake = Faker()
-    id = 0;
+    id = 0
     while id <= nums:
         user = User(fake.name(), fake.address(), fake.job(),random.randint(10,100))
         user_list.append(user)
