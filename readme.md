@@ -15,6 +15,8 @@ A RESTful web service for data generation
 
 <br>`docker-compose up`</br>
 
+<br> for first time start up, pass `--build` to docker compose </br>
+
 ## Development Rules
 
 <li>Create a branch based on the latest version</li>
