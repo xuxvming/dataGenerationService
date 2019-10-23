@@ -11,11 +11,5 @@ services:
       - 8080:8080
     expose:
       - "8080"
-  mongodb:
-    image: mongo
-    ports:
-      - 27017:27017
-    volumes:
-      - data-volume:/data/db
 volumes:
   data-volume:

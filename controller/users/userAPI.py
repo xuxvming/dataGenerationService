@@ -24,5 +24,5 @@ class userAPI(Resource):
         return res
 
     @api.expect(user)
-    def post(self, name, address, job):
-        return create_user(name, address, job)
+    def post(self, name, address, job, age):
+        return create_user(name, address, job, age)

@@ -18,10 +18,13 @@ A RESTful web service for data generation
 <br> for first time start up, pass `--build` to docker compose </br>
 
 ## Database
-<br> NOTE: No need to install MongoDB on your laptops, it comes with docker image</br>
-<br>current database schema: </br>
-<li>databsename: userdb</li>
-<li>collecion: user_collection</li>
+### <br>current database schema: </br>
+<br>A good tutorial of MongoDB can be found [here](https://www.tutorialspoint.com/mongodb/index.htm)</br>
+<li>database name: user_db</li>
+<li>collection: user_collection</li>
+<li>db username: admin</li>
+<li>db password: pwd</li>
+<li>connection link: defined in settings.py</li>
 
 ## Development Rules
 
