@@ -17,6 +17,12 @@ A RESTful web service for data generation
 
 <br> for first time start up, pass `--build` to docker compose </br>
 
+## Database
+<br> NOTE: No need to install MongoDB on your laptops, it comes with docker image</br>
+<br>current database schema: </br>
+<li>databsename: userdb</li>
+<li>collecion: user_collection</li>
+
 ## Development Rules
 
 <li>Create a branch based on the latest version</li>
