@@ -17,6 +17,15 @@ A RESTful web service for data generation
 
 <br> for first time start up, pass `--build` to docker compose </br>
 
+## Database
+### <br>current database schema: </br>
+<br>A good tutorial of MongoDB can be found [here](https://www.tutorialspoint.com/mongodb/index.htm)</br>
+<li>database name: user_db</li>
+<li>collection: user_collection</li>
+<li>db username: admin</li>
+<li>db password: pwd</li>
+<li>connection link: defined in settings.py</li>
+
 ## Development Rules
 
 <li>Create a branch based on the latest version</li>

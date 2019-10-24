@@ -10,7 +10,7 @@ class User:
 
     def serialize(self):
         return {
-            'id': self.id,
+            '_id': self.id,
             'name': self.name,
             'address': self.address,
             'job': self.job
