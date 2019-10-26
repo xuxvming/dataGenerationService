@@ -13,7 +13,7 @@ api = Api(version='1.0', title='data generation service',
 @api.errorhandler
 def default_error_handler(e):
     message = 'An unhandled exception occurred.'
-    log.exception(message)
+    log.info(message)
 
     if not settings.FLASK_DEBUG:
         return {'message': message}, 500
