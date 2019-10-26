@@ -18,7 +18,7 @@ class userAPI(Resource):
     @api.marshal_list_with(user)
     @api.expect(user_quantity_args)
     def get(self):
-        # parameter, not path variable
+
         args = user_quantity_args.parse_args(request)
         res, ids = generate_user(args.get('number'),args.get('db'))
         return res
@@ -27,8 +27,11 @@ class userAPI(Resource):
     def post(self, name, address, job, age):
         return create_user(name, address, job, age)
 
-@namespace.route('/db/<string:collection>')
-class GetUser(Resource):
+@namespace.route('/db')
+class GetBookWithUserID(Resource):
     @api.marshal_list_with(book)
-    def get(self,collection):
-        return generate_data(collection)
+    def get(self):
+        '''
+        :param collection: set this to book_collection
+        '''
+        return generate_data(collection='book_collection')
