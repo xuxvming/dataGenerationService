@@ -4,13 +4,15 @@ import os
 from flask import Flask, Blueprint
 
 import settings
+from controller.bookAPI import namespace as book_namespace
 from controller.restplus import api
-from controller.users.userAPI import namespace as user_namespace
+from controller.userAPI import namespace as user_namespace
 
 app = Flask(__name__)
 logging_conf_path = os.path.normpath(os.path.join(os.path.dirname(__file__), './logging.conf'))
 logging.config.fileConfig(logging_conf_path)
 log = logging.getLogger(__name__)
+
 
 def configure_app(flask_app):
     flask_app.config['SERVER_NAME'] = settings.FLASK_SERVER_NAME
@@ -26,6 +28,7 @@ def initialize_app(flask_app):
     blueprint = Blueprint('controller', __name__, url_prefix='/controller')
     api.init_app(blueprint)
     api.add_namespace(user_namespace)
+    api.add_namespace(book_namespace)
     flask_app.register_blueprint(blueprint)
 
 

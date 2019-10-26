@@ -10,3 +10,5 @@ RESTPLUS_ERROR_404_HELP = False
 
 
 MONGO_DB_CONNECTION = "mongodb+srv://admin:pwd@adaptive-application-eorih.gcp.mongodb.net/test?retryWrites=true&w=majority"
+GOOD_READS_API = 'B8cygGUuRsmPMoNaKiimQ'
+GOOD_READS_SECRET = 'pUphWdeaAjlfYMKEvqAd7hAHJxLZ86nkVB2aHk7jB84'

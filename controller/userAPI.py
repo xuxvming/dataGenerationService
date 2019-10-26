@@ -4,8 +4,8 @@ from flask import request
 from flask_restplus import Resource
 
 from controller.restplus import api
-from controller.serilizers import user, user_quantity_args
-from users.user_generator import generate_user, create_user
+from controller.serilizers import user, user_quantity_args, book
+from users.data_generator import generate_user, create_user, generate_data
 
 log = logging.getLogger(__name__)
 
@@ -20,9 +20,15 @@ class userAPI(Resource):
     def get(self):
         # parameter, not path variable
         args = user_quantity_args.parse_args(request)
-        res = generate_user(args.get('num'))
+        res, ids = generate_user(args.get('number'),args.get('db'))
         return res
 
     @api.expect(user)
     def post(self, name, address, job, age):
         return create_user(name, address, job, age)
+
+@namespace.route('/db/<string:collection>')
+class GetUser(Resource):
+    @api.marshal_list_with(book)
+    def get(self,collection):
+        return generate_data(collection)
