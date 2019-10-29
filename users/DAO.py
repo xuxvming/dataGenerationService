@@ -1,5 +1,6 @@
 import ssl
 
+from bson.objectid import ObjectId
 from pymongo import MongoClient
 
 from settings import MONGO_DB_CONNECTION
@@ -30,3 +31,12 @@ class UserDAO:
         for user in users:
             res.append(user)
         return res
+
+    def get_user_by_id(self,id,collection='user_collection'):
+        db = self.get_database()
+        collection = db[collection]
+        cursor = collection.find({'_id':ObjectId(id)})
+        user = None
+        for u in cursor:
+            user = u
+        return user

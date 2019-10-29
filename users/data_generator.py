@@ -1,9 +1,3 @@
-import random
-import logging
-from faker import Faker
-import pandas as pd
-from users.user import User
-from users.DAO import UserDAO
 import logging
 import random
 
@@ -49,6 +43,16 @@ def generate_data(collection):
     repo = UserDAO()
     repo.insert_documents(book_dict,collection)
     return book_dict
+
+def get_user(id):
+    repo = UserDAO()
+    user = repo.get_user_by_id(id)
+    if user == None:
+        raise (AttributeError,"unable to find the user by id {[]}".format(id))
+
+    user.pop('_id',None)
+    logging.info(str(user))
+    return user
 
 def create_user(name, address, job, age):
     return User(name, address, job, age)

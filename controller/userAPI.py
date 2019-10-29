@@ -5,7 +5,7 @@ from flask_restplus import Resource
 
 from controller.restplus import api
 from controller.serilizers import user, user_quantity_args, book
-from users.data_generator import generate_user, create_user, generate_data
+from users.data_generator import generate_user, create_user, generate_data, get_user
 
 log = logging.getLogger(__name__)
 
@@ -35,3 +35,9 @@ class GetBookWithUserID(Resource):
         :param collection: set this to book_collection
         '''
         return generate_data(collection='book_collection')
+
+@namespace.route('/db/user/<string:user_id>')
+class GetUserFromDB(Resource):
+    @api.marshal_list_with(user)
+    def get(self,user_id):
+        return get_user(user_id)
