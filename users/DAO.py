@@ -3,12 +3,12 @@ import ssl
 from bson.objectid import ObjectId
 from pymongo import MongoClient
 
-from settings import MONGO_DB_CONNECTION
+from settings import MONGO_DB_CONNECTION_CLIENT
 
 
 class UserDAO:
 
-    client = MongoClient(MONGO_DB_CONNECTION,ssl_cert_reqs=ssl.CERT_NONE)
+    client = MongoClient(MONGO_DB_CONNECTION_CLIENT, ssl_cert_reqs=ssl.CERT_NONE)
 
     def get_database(self, database_name='user_db'):
         return self.client[database_name]

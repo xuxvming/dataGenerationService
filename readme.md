@@ -29,7 +29,7 @@ A RESTful web service for data generation
 
 ### How to connect the database
 <br>1. Download MongoDB Client on your laptop</br>
-<br>2. Use the given connection link</br>
+<br>2. Use the given connection link (MONGO_DB_CONNECTION_SHELL)</br>
 <br>3. [MongoDB](https://www.mongodb.com/download-center/compass) compass is a great tool to explore the data</br>
 <br>4. If you need to run the query, it is recommended to have shell instead </br>
 <br>5. Once you connected with the database, you will be asked to enter your username and password and they are stated above</br>
