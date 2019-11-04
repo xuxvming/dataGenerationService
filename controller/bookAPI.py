@@ -1,9 +1,9 @@
 from flask_restplus import Resource
 
 from controller.restplus import api
-from users.data_generator import generate_data
+from model.data_generator import generate_data
 
-namespace = api.namespace('v1/books', description='users controller')
+namespace = api.namespace('v1/books', description='model controller')
 
 
 @namespace.route('/generate/')

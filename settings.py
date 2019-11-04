@@ -13,3 +13,4 @@ MONGO_DB_CONNECTION_CLIENT = "mongodb+srv://admin:pwd@adaptive-application-eorih
 MONGO_DB_CONNECTION_SHELL = 'mongo "mongodb+srv://adaptive-application-eorih.gcp.mongodb.net/test"  --username admin'
 GOOD_READS_API = 'B8cygGUuRsmPMoNaKiimQ'
 GOOD_READS_SECRET = 'pUphWdeaAjlfYMKEvqAd7hAHJxLZ86nkVB2aHk7jB84'
+NUM_PROCESSES = 20

@@ -23,5 +23,5 @@ book = api.model('Books',{
     'user_id':fields.String(description='user id'),
 })
 user_quantity_args = reqparse.RequestParser()
-user_quantity_args.add_argument('number', type=int, required=False, default=1, help='number of users')
+user_quantity_args.add_argument('number', type=int, required=False, default=1, help='number of model')
 user_quantity_args.add_argument('db', type=bool, required=False, default=False, help='populate generated records to database, default false')

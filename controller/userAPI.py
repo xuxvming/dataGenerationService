@@ -5,11 +5,11 @@ from flask_restplus import Resource
 
 from controller.restplus import api
 from controller.serilizers import user, user_quantity_args, book
-from users.data_generator import generate_user, create_user, generate_data, get_user
+from model.data_generator import generate_user, create_user, generate_data, get_user
 
 log = logging.getLogger(__name__)
 
-namespace = api.namespace('v1/users', description='users controller')
+namespace = api.namespace('v1/model', description='model controller')
 
 
 @namespace.route('/generate/')
