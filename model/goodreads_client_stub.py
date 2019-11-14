@@ -24,3 +24,6 @@ class GoodReadsClientStub(GoodreadsClient):
                 return book
         raise ValueError ('Unable to find book written by {}'.format(author_name))
 
+    def emty(self):
+        return
+
