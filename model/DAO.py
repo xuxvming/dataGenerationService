@@ -13,11 +13,14 @@ class UserDAO:
     def get_database(self, database_name='user_db'):
         return self.client[database_name]
 
-    def insert_documents(self, dataset, collection):
+    def insert_documents(self, dataset, collection,bulk):
         db = self.get_database()
         collection = db[collection]
-        inserted_ids = collection.insert_many(dataset).inserted_ids
-        return inserted_ids
+        if bulk:
+             collection.insert_many(dataset)
+        else:
+             collection.insert_one(dataset)
+
 
     def drop_collection(self,collection):
         db = self.get_database()
