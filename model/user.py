@@ -1,4 +1,8 @@
 class User:
+    id = None
+    title = None
+    description = None
+    isbns = None
 
     def __init__(self, name, address, job, age):
         self.name = name
@@ -7,7 +11,14 @@ class User:
         self.age = age
 
     def serialize(self):
-        try:
+
+        if self.title is None:
+            res = {'name': self.name,
+                   'address': self.address,
+                   'job': self.job,
+                   'age': self.age,
+                   'id': self.id}
+        else:
             res = {
             'name': self.name,
             'address': self.address,
@@ -15,13 +26,7 @@ class User:
             'age': self.age,
             'isbns': self.isbn,
             'descriptions': self.description,
-            'title': self.title
-        }
-        except AttributeError:
-            res = {'name': self.name,
-            'address': self.address,
-            'job': self.job,
-            'age': self.age,}
+            'title': self.title}
         return res
 
     def set_description(self, description):
@@ -32,3 +37,6 @@ class User:
 
     def set_isbn(self, isbn):
         self.isbn = isbn
+
+    def set_id(self,id):
+        self.id = id

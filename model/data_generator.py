@@ -119,4 +119,5 @@ def create_user(name, address, job, age):
     id = random.randint(1,20000)
     user_dao = UserDAO()
     user_dao.insert_documents(user.serialize(),'user',bulk=False)
-    return {'user_id':id}
+    user.set_id(id)
+    return user.serialize()

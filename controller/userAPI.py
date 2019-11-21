@@ -22,6 +22,7 @@ class userAPI(Resource):
         args = user_quantity_args.parse_args(request)
         res, ids = generate_user(args.get('number'),args.get('db'))
         return res
+
     @api.expect(user)
     def post(self):
         name = request.json['name']
