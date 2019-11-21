@@ -17,9 +17,9 @@ class UserDAO:
         db = self.get_database()
         collection = db[collection]
         if bulk:
-             collection.insert_many(dataset)
+             return collection.insert_many(dataset).inserted_ids
         else:
-             collection.insert_one(dataset)
+             return collection.insert_one(dataset).inserted_id
 
 
     def drop_collection(self,collection):
@@ -43,3 +43,12 @@ class UserDAO:
         for u in cursor:
             user = u
         return user
+
+    def get_book_by_id(self,id,collection='books'):
+        db = self.get_database()
+        collection = db[collection]
+        cursor = collection.find({'id': id})
+        book = None
+        for b in cursor:
+            book = b
+        return book

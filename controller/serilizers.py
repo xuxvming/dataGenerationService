@@ -8,6 +8,7 @@ user = api.model('Users', {
     'job': fields.String(required=True, description='user job'),
     'address': fields.String(required=True, description='user address'),
     'age': fields.Integer(required=True, description='user age'),
+
 })
 
 book = api.model('Books',{
